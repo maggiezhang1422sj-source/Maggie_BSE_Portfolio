@@ -29,6 +29,8 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 
 
+
+
 # Second Milestone
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
@@ -52,6 +54,12 @@ For your first milestone, describe what your project is and how you plan to buil
 - Technical progress you've made so far
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project
+
+My knee rehab device is designed to help patients recover from knee injury. My goal is to construct a brace with sensors placed near the knee joint to measure bending angle and movement to track the user's progress. 
+I've completed the hardware aspect of my project by completing the wiring for my breadboard. 
+My knee device uses an Arduino Nano, the power source on my board; flex sensor, which detects knee bending; a buzzer, the signal to warn the user of improper form; and an accelerometer that measures the knee's movement. 
+The Arduino nano recieves power from the USB cable and the voltage pin is connected to the power rail while the GND pin is connected to the ground rail. Since the Arduino cannot directly measure the resiatnce, the flex sensor is connected with a resistor of 10 kOhms to create a voltage divider. The flex sensor changes the resistance: when its straight there is a lower resistance, but the more it bends, the greater the resistance becomes. The Arduino recieves data of the movement and angle from the accelerometer, and they are connected through commuinications pins--SDA (serial data) and SCL (Serial Clock). If the knee bends too far, my arduino activates the buzzer that produces a warning. 
+Ive never used a flex sensor before the project, so it took me we while to understand................
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
