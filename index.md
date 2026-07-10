@@ -9,7 +9,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
-| Maggie Z | Lynbrook High | Electrical Engineering | Incoming Senior
+| Maggie Z | Lynbrook High | Electrical Engineering | Incoming Senior |
 
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
@@ -40,7 +40,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 My second milestone consists of programming my bread board to read sensor data and activate the buzzer once the flex sensor is bent. The purpose of this is to detect when the knee is bending beyond a certain threshold and alert the user to maintain proper form during their exercises. 
 In the function of my program, I set digital pin 9 on my Arduino as the buzzer's output and set analog pin 0 as an input to read values from my flex sensor. Basically, pin 9 creates the sound while pin 0 reads the bend value. The flex sensor changes value epending how much it is bent. When the felx sensor is straight, the value is higher, but once it's bent, the value decreases. The value represents the voltage, while the flex sensor acts as a resistor. When you bend the sensor, the resistance increases, so the voltage drops. The buzzer produces a sound once it's dropped beyond a certain value to alert the user of improper form. 
 Challenges I've encoutered were mostly related to issues with my buzzer. Sometimes it would turn on after I bent my sensor, but it would continue even after the sensor returned to it's initial position. The Arduino froze after a delay, and it stopped updating the sensor readings. I had to remove code that stops the Arduino from running by deleting some delay commands. 
-My program currently reads sensor data, but it doesn't detect incorrect movement using accelerometer. Basically, my code is checking whether he knee is bent and turns the buzzer on/off based on the sensor threshold. There's no logic that activates the buzzer if the movement is "incorrect"; examples of incorrect movement may include knees that wobble too much, tilting too far, unstablability, etc. My next goal is for my program to detect incorrect movement. 
+My program currently reads sensor data, but it doesn't detect incorrect movement using accelerometer. Basically, my code is checking whether the knee is bent and turns the buzzer on/off based on the sensor threshold. There's no logic that activates the buzzer if the movement is "incorrect"; examples of incorrect movement may include knees that wobble too much, tilting too far, unstability, etc. My next goal is for my program to detect incorrect movement. 
 
 
 # First Milestone
@@ -206,15 +206,15 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Arduino Nano | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Flex sensor | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| USB cable | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Jumper wires | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Accelerometer | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Piezo Buzzer | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| 100 ohm resistor  | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| 10 kohm resistor  | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Breadboard | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Arduino Nano | Reads the voltage from the flex sensor and converts it into a value. The number tells the Arduino how much the knee bends. It reads the accelerometer to detect improper form and activates the buzzer to alert the user. In summary, it's the central controller that reads the sensors and activates the buzzer based on the movement  | $20-25 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Flex sensor | What the item is used for | $8 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| USB cable | What the item is used for | $10 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Jumper wires | What the item is used for | $7 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Accelerometer | What the item is used for | $20 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Piezo Buzzer | What the item is used for | $3 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| 100 ohm resistor  | What the item is used for | $0.10 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| 10 kohm resistor  | What the item is used for | $0.06 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Breadboard | What the item is used for | $2.5` | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Knee sleeve | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
 
