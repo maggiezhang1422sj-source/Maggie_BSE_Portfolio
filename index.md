@@ -59,144 +59,129 @@ My plan the complete my project is to program the board to read sensor data and 
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+<img width="1040" height="533" alt="image" src="https://github.com/user-attachments/assets/78b97a0c-bf60-4dd9-b947-7befea6756b5" />
+
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
+#include <Wire.h>
 #include <Adafruit_LSM6DS3TRC.h>
-#include <Adafruit_LIS3MDL.h>
 
 
-Adafruit_LIS3MDL lis3mdl;
+const int FLEX_PIN = A0;
+const int BUTTON_PIN = 2;
+const int LED_PRESSED_PIN = 4;
+const int LED_NOT_PRESSED_PIN = 7;
+const int BUZZER_PIN = 9;
+
+//flex sensor 
+const int FLEX_STRAIGHT = 760;  // approximately 0 degrees
+const int FLEX_BENT_90 = 700;   // approximately 90 degrees
+
+const float KNEE_BENT_ANGLE = 30.0;        // begin checking form after this bend
+const float ROTATION_LIMIT = 0.5;          // radians/second; adjust after testing
+
 Adafruit_LSM6DS3TRC lsm6ds;
 
-
-int int_timer = 0;
-
-int accelX = 0;
-
-int accelY = 0;
-
-int accelZ = 0;
-
-int gyroX = 0;
-
-int gyroY = 0;
-
-int gyroZ = 0;
-
-int temp = 0;
-
-int sensorValue = 0;
-
-int buttonState = 0;
-
-void setup()
-{
-  pinMode(9, OUTPUT); //sets pin 9 -> buzzer
-  Serial.begin(9600);
-  pinMode(4, OUTPUT); 
-  pinMode(7, OUTPUT);
-  //sets pin 4 & 7 -> LEDs
-  pinMode(A0, INPUT); //sets A0-> flex sensor input
-  pinMode(9, OUTPUT);
-
-  digitalWrite(9, LOW);
-  Serial.println("Knee Rehab Device started");
-
-  //accelerometer set up (from somewhere online to check if the accelerometer is working):
-  //modify it eventually
-  if (!lsm6ds.begin_I2C()) { //check if sensor connected 
-    Serial.println("Failed to find LSM6DS3TR-C chip"); //sensor didn't initialize 
-    while (1) delay(10); // stop program
-  }
-  Serial.println("LSM6DS3TR-C found!"); //sesnor works 
-
-  // Configure accelerometer
-  lsm6ds.setAccelRange(LSM6DS_ACCEL_RANGE_2_G); //meausres acceleration in terms of gravity; set to 2G
-  lsm6ds.setAccelDataRate(LSM6DS_RATE_104_HZ); //104 readings/sec
-
-  // Configure gyroscope
-  lsm6ds.setGyroRange(LSM6DS_GYRO_RANGE_250_DPS); //can detect rotation up to +-250°/sec 
-  lsm6ds.setGyroDataRate(LSM6DS_RATE_104_HZ); //104 readings/sec
-
-  
-
-  Serial.println("Accelerometer + Gyro initialized");
-  
-
-  
-
-  
+float mapFloat(float value, float inMin, float inMax,
+               float outMin, float outMax) {
+  return (value - inMin) * (outMax - outMin) /
+         (inMax - inMin) + outMin;
 }
 
-void loop()
-{
-  buttonState = digitalRead(2);
-  if (buttonState == LOW) {
-    digitalWrite(4, HIGH);
-    //since buttonState is always 0, if condition always true
-    delay(100); // Wait for 100 millisecond(s)
-    digitalWrite(4, LOW);
-    delay(100); // Wait for 100 millisecond(s)
-  } else {
-    digitalWrite(7, HIGH);
-    delay(100); // Wait for 100 millisecond(s)
-  } 
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
 
-  sensorValue = analogRead(A0); //reads flex sensor; pin no is the arguement 
-  Serial.println(sensorValue); //prints voltage values 
-  //float Vflex = sensorValue * 3.3 / 1023.0;  
-  //float Rflex = 10000.0 * (3.3 / Vflex - 1.0);  
-  //float angle = map(Rflex, 25000.0, 100000.0, 0, 90);
-  //angle = constrain(angle, 0, 90);
-  if (sensorValue < 850) {
-    tone(9, 5274); // play tone 100 (E8 = 5274 Hz)
-    //turn buzzer on if bent
-    //digitalWrite(9, HIGH);
-    Serial.println("hi"); //remeber to delete this line 
-    
-  } else {
-    noTone(9);
-    Serial.println("bye"); //remeber to delete this line
-    
+  pinMode(FLEX_PIN, INPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  pinMode(LED_PRESSED_PIN, OUTPUT);
+  pinMode(LED_NOT_PRESSED_PIN, OUTPUT);
+  pinMode(BUZZER_PIN, OUTPUT);
+
+  noTone(BUZZER_PIN);
+
+  Serial.println("Knee Rehab Device Started");
+
+  if (!lsm6ds.begin_I2C()) {
+    Serial.println("Failed to find LSM6DS3TR-C chip");
+    while (true) {
+      noTone(BUZZER_PIN);
+      delay(10);
+    }
   }
-  //turn buzzer off
-  delay(10); // Wait for 10 millisecond(s)
 
-  //read motion data (acceleration+rotation) from LSM6DS3TR‑C
+  lsm6ds.setAccelRange(LSM6DS_ACCEL_RANGE_2_G);
+  lsm6ds.setAccelDataRate(LSM6DS_RATE_104_HZ);
+  lsm6ds.setGyroRange(LSM6DS_GYRO_RANGE_250_DPS);
+  lsm6ds.setGyroDataRate(LSM6DS_RATE_104_HZ);
+
+  Serial.println("LSM6DS3TR-C found!");
+  Serial.println("Accelerometer + gyroscope initialized");
+}
+
+void loop() {
+  // LED
+  bool buttonPressed = (digitalRead(BUTTON_PIN) == LOW);
+
+  digitalWrite(LED_PRESSED_PIN, buttonPressed ? HIGH : LOW);
+  digitalWrite(LED_NOT_PRESSED_PIN, buttonPressed ? LOW : HIGH);
+
+  //flex sensor+knee angle
+  int flexValue = analogRead(FLEX_PIN);
+
+  float kneeAngle = mapFloat(
+    flexValue,
+    FLEX_STRAIGHT, FLEX_BENT_90,
+    0.0, 90.0
+  );
+
+  kneeAngle = constrain(kneeAngle, 0.0, 90.0);
+  bool kneeBent = (kneeAngle >= KNEE_BENT_ANGLE);
+
+  // imu 
   sensors_event_t accel;
   sensors_event_t gyro;
-  sensors_event_t tempEvent;
+  sensors_event_t temp;
 
+  lsm6ds.getEvent(&accel, &gyro, &temp);
 
-  lsm6ds.getEvent(&accel, &gyro, &tempEvent); //reads sensor data
-  //&tempEven not necassary, but Adafruit_LSM6DS3TRC library requires three arguments in getEvent()
+  float rotationAmount = sqrt(
+    gyro.gyro.x * gyro.gyro.x +
+    gyro.gyro.y * gyro.gyro.y +
+    gyro.gyro.z * gyro.gyro.z
+  );
 
-  float accelX = accel.acceleration.x; //forward/backward lean
-  float accelY = accel.acceleration.y; //left/right lean
-  float accelZ = accel.acceleration.z; //vertical acceleration 
+  // Bad form = rotating too quickly while knee is bent.
+  bool badForm = kneeBent && (rotationAmount > ROTATION_LIMIT);
 
-  //helps detect wobbling or rotational instability 
-  float gyroX = gyro.gyro.x; //forward/backward rotation
-  float gyroY = gyro.gyro.y; //left/right rotation
-  float gyroZ = gyro.gyro.z; //vertical rotation
+  // buzzer activation
+  if (badForm) {
+    tone(BUZZER_PIN, 1000);
+  } else {
+    noTone(BUZZER_PIN);
+  }
 
+  // printed on serial moniter 
+  Serial.print("Flex: ");
+  Serial.print(flexValue);
+  Serial.print(" | Knee angle: ");
+  Serial.print(kneeAngle, 1);
+  Serial.print(" degrees | Rotation: ");
+  Serial.print(rotationAmount, 3);
+  Serial.print(" rad/s | ");
 
-  //prints data to serial moniter 
-  Serial.print("Accel X: "); Serial.print(accelX);
-  Serial.print("  Y: "); Serial.print(accelY);
-  Serial.print("  Z: "); Serial.println(accelZ);
+  if (badForm) {
+    Serial.println("BAD FORM");
+  } else if (kneeBent) {
+    Serial.println("Knee bent - OK");
+  } else {
+    Serial.println("Knee straight");
+  }
 
-  Serial.print("Gyro X: "); Serial.print(gyroX);
-  Serial.print("  Y: "); Serial.print(gyroY);
-  Serial.print("  Z: "); Serial.println(gyroZ);
-
-
+  delay(100);
 }
-
-//Rflex = ((3.3/A0)-1)*10k
-//Vcc= 3.3, R_DIV=10k
 
 
 
