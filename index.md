@@ -56,6 +56,7 @@ My plan the complete my project is to program the board to read sensor data and 
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
+This image does not include the imu because Tinkercad, the website for 3D circuit design, does not include the Adafruit LSM6DS3TR-C IMU that I'm using on my project. 
 
 #include <Wire.h>
 #include <Adafruit_LSM6DS3TRC.h>
