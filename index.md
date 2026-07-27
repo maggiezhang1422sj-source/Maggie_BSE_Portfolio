@@ -51,7 +51,6 @@ I've never used a flex sensor before the project, so it took me we while to unde
 My plan the complete my project is to program the board to read sensor data and activate the buzzer once the sensor is bent. Once I'm done with that, I can program my Arduino to detect incorrect movement, and then add any additional modifications to my project. 
 
 # Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 <img width="1040" height="533" alt="image" src="https://github.com/user-attachments/assets/78b97a0c-bf60-4dd9-b947-7befea6756b5" />
 
 
