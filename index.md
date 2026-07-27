@@ -204,8 +204,8 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Jumper wires | Wire together electrical components | $2.33 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | imu | a motion sensor containing an accelerometer+gyroscope | $12 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Piezo Buzzer | Acts as sound feedback to alert the user of improper form. After recieving a signal from an digital pun on my Arduino, it makes a tone. | $3 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| 100 ohm resistor  | What the item is used for | $0.10 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| 10 kohm resistor  | What the item is used for | $0.06 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| 100 ohm resistor  | protects buzzer by reducing current | $0.10 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| 10k ohm resistor  | Allows Arduino to detect "straight" vs "bent" knee before checking for improper form | $0.06 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | perf-board | holds all my components | $3.5 | <a href="[https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/](https://www.digikey.com/en/products/detail/digikey-standard/DKS-SOLDERBREAD-02/15970925?gclsrc=aw.ds&gad_source=4&gad_campaignid=20232005509&gbraid=0AAAAADrbLlioh5msBPNbwUGthunwz1tW4&gclid=Cj0KCQjwg5zTBhCLARIsAP2AFU7o3RxwU_7VCvHO7cR1VvjA13-8QQ1qXtOBlKdwqhIDTpOYXqrRlGkaAouTEALw_wcB)"> Link </a> |
 | Knee sleeve | Acts as the foundation of my device; all the hardware aspects are attached to the knee sleeve.  | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | red LED | visual warning | $0.62 | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
