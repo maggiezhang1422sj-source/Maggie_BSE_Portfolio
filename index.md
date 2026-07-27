@@ -16,11 +16,9 @@ My project is a knee rehab device that monitors knee bending and warns users abo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+Since my second milestone, I've soldered on on the components, transferring everything from my solder-less breadboard to the perf-board. I did the step before my imu calibration so that the readings wouldn't change afterward. The system first checks if the knee is bent by at least 30° using the flex sensor. Once the bending threshold is reached, the IMU continuously measures the knee’s rotational speed. If the IMU detects a sudden rotation greater than the threshold, the movement is considered too fast or abrupt. Right now, I have that threshold set to 0.5 rad/sec by default, but the user can adjust the value based on their rehab stage. 
+My biggest challenge analyzing issues relating to my hardware components. After soldering the components, my device initially worked as expected, but one day it suddenly stopped functioning. Since the program had worked before, I knew the software was not the issue, so I concluded that the problem was likely related to the hardware. I replaced the USB cable, the adapter, and even the IMU, but the device still did not work. It wasn't until I replaced the microcontroller that the project finally started working again. Although the  process was long and frustrating, I was able to identify the faulty component and successfully resolve the issue.
+
 
 
 
