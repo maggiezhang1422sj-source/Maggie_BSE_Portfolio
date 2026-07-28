@@ -50,6 +50,10 @@ The Arduino nano recieves power from the USB cable and the voltage pin is connec
 I've never used a flex sensor before the project, so it took me we while to understand how it actually works. I didn't realie that the sesnor acts as a resistor that changes value when you bend it. Once I understood its function, I realized that it couldn't be directly connected to the Arduino by itself. The Arduino can only read voltage, not resistance. I could finally wire my flex sensor on to the board correctly. One leg of my sensor is connected to 3.3 V (from my Arduino) and the other leg is connected to the ground rail of my board. 
 My plan the complete my project is to program the board to read sensor data and activate the buzzer once the sensor is bent. Once I'm done with that, I can program my Arduino to detect incorrect movement, and then add any additional modifications to my project. 
 
+<img width="715" height="279" alt="image" src="https://github.com/user-attachments/assets/025ccfe5-e094-4b78-b816-71146693427f" />
+Figure 1: Diagram of flex sensor acting as a voltage divider (https://www.researchgate.net/figure/oltage-divider-circuit-for-flex-sensor-the-voltage-divider-circuit-is-connected-to-a_fig2_396461074)
+
+
 # Schematics 
 <img width="1040" height="533" alt="image" src="https://github.com/user-attachments/assets/78b97a0c-bf60-4dd9-b947-7befea6756b5" />
 
