@@ -53,6 +53,7 @@ I've never used a flex sensor before the project, so it took me we while to unde
 My plan the complete my project is to program the board to read sensor data and activate the buzzer once the sensor is bent. Once I'm done with that, I can program my Arduino to detect incorrect movement, and then add any additional modifications to my project. 
 
 <img width="715" height="279" alt="image" src="https://github.com/user-attachments/assets/025ccfe5-e094-4b78-b816-71146693427f" />
+
 Figure 1: Diagram of flex sensor acting as a voltage divider (https://www.researchgate.net/figure/oltage-divider-circuit-for-flex-sensor-the-voltage-divider-circuit-is-connected-to-a_fig2_396461074)
 
 
