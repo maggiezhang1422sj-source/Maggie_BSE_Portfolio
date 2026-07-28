@@ -59,7 +59,7 @@ Figure 1: Diagram of flex sensor acting as a voltage divider (https://www.resear
 
 # Schematics 
 <img width="1040" height="533" alt="image" src="https://github.com/user-attachments/assets/78b97a0c-bf60-4dd9-b947-7befea6756b5" />
-
+Diagram does not include the imu because the website that allowed me to develop the 3D model of my circuit did not include every electronic sensor component.
 
 # Code
 
