@@ -20,7 +20,7 @@ Since my second milestone, I've soldered on on the components, transferring ever
 My biggest challenge analyzing issues relating to my hardware components. After soldering the components, my device initially worked as expected, but one day it suddenly stopped functioning. Since the program had worked before, I knew the software was not the issue, so I concluded that the problem was likely related to the hardware. I replaced the USB cable, the adapter, and even the IMU, but the device still did not work. It wasn't until I replaced the microcontroller that the project finally started working again. Although the  process was long and frustrating, I was able to identify the faulty component and successfully resolve the issue.
 
 
-<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/72220d5a-e1c6-4bda-a038-cd85c76940cd" />
+<img src="image.jpg" alt="image" style="width: 100vw; height: auto;" src="https://github.com/user-attachments/assets/72220d5a-e1c6-4bda-a038-cd85c76940cd" />
 Figure 2: function of accelerometer and gyroscope (https://www.circuitbread.com/ee-faq/how-do-accelerometers-and-gyroscopes-work)
 
 
