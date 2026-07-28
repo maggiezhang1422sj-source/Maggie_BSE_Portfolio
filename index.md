@@ -111,7 +111,7 @@ void setup() {
     Serial.println("Failed to find LSM6DS3TR-C chip");
 
     while (true) {
-      noTone(BUZZER_PIN);
+      noTone(BUZZER_PIN):
       delay(10);
     }
   }
