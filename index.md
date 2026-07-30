@@ -14,7 +14,7 @@ My project is a knee rehab device that monitors knee bending and warns users abo
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=OUOKc4baLAE" title="My 3rd Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Since my second milestone, I've soldered on on the components, transferring everything from my solder-less breadboard to the perf-board. I did the step before my imu calibration so that the readings wouldn't change afterward. The system first checks if the knee is bent by at least 30° using the flex sensor. Once the bending threshold is reached, the IMU continuously measures the knee’s rotational speed. If the IMU detects a sudden rotation greater than the threshold, the movement is considered too fast or abrupt. Right now, I have that threshold set to 0.5 rad/sec by default, but the user can adjust the value based on their rehab stage. 
 My biggest challenge analyzing issues relating to my hardware components. After soldering the components, my device initially worked as expected, but one day it suddenly stopped functioning. Since the program had worked before, I knew the software was not the issue, so I concluded that the problem was likely related to the hardware. I replaced the USB cable, the adapter, and even the IMU, but the device still did not work. It wasn't until I replaced the microcontroller that the project finally started working again. Although the  process was long and frustrating, I was able to identify the faulty component and successfully resolve the issue.
@@ -30,7 +30,7 @@ Figure 2: function of accelerometer and gyroscope (https://www.circuitbread.com/
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=F-pjQPVt2HI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=F-pjQPVt2HI" title="My 2nd Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 My second milestone consists of programming my bread board to read sensor data and activate the buzzer once the flex sensor is bent. The purpose of this is to detect when the knee is bending beyond a certain threshold and alert the user to maintain proper form during their exercises. 
 In the function of my program, I set digital pin 9 on my Arduino as the buzzer's output and set analog pin 0 as an input to read values from my flex sensor. Basically, pin 9 creates the sound while pin 0 reads the bend value. The flex sensor changes value epending how much it is bent. When the felx sensor is straight, the value is higher, but once it's bent, the value decreases. The value represents the voltage, while the flex sensor acts as a resistor. When you bend the sensor, the resistance increases, so the voltage drops. The buzzer produces a sound once it's dropped beyond a certain value to alert the user of improper form. 
@@ -42,7 +42,7 @@ My program currently reads sensor data, but it doesn't detect incorrect movement
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="932" height="524" src="https://www.youtube.com/embed/fE7zrK_g6vI" title="Maggie Z. Milestone 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="932" height="524" src="https://www.youtube.com/embed/fE7zrK_g6vI" title="My 1st Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 My knee rehab device is designed to help patients recover from knee injury. My goal is to construct a brace with sensors placed near the knee joint to measure bending angle and movement to track the user's progress. 
