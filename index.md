@@ -9,6 +9,7 @@ My project is a knee rehab device that monitors knee bending and warns users abo
 **Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
 ![Headstone Image](logo.svg)
+<img width="1040" height="533" alt="image" src="file:///Users/youjingzhang/Desktop/Screen%20Shot%202026-07-30%20at%201.54.12%20PM.png" />
   
 # Final Milestone
 
