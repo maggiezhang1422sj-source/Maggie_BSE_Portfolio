@@ -70,9 +70,7 @@ Diagram does not include the imu because the website that allowed me to develop 
 
 const int FLEX_PIN = A0;
 const int BUTTON_PIN = 2;
-const int LED_PRESSED_PIN = 4;
 const int BAD_FORM_LED_PIN = 6;      
-const int LED_NOT_PRESSED_PIN = 7;
 const int BUZZER_PIN = 9;
 
 // Flex sensor calibration values
@@ -93,12 +91,12 @@ float mapFloat(float value, float inMin, float inMax,
 void setup() {
   Serial.begin(9600);
   Wire.begin();
+  
   pinMode(FLEX_PIN, INPUT);
+  
   pinMode(BUTTON_PIN, INPUT_PULLUP);
-
-  pinMode(LED_PRESSED_PIN, OUTPUT);
+  
   pinMode(BAD_FORM_LED_PIN, OUTPUT);   
-  pinMode(LED_NOT_PRESSED_PIN, OUTPUT);
 
   pinMode(BUZZER_PIN, OUTPUT);
 
