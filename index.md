@@ -13,8 +13,6 @@ My project is a knee rehab device that monitors knee bending and warns users abo
   
 # Final Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
 <iframe width="932" height="524" src="https://www.youtube.com/embed/OUOKc4baLAE?si=yVW51Ad1745CydBu" title="My 3rd Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Since my second milestone, I've soldered on on the components, transferring everything from my solder-less breadboard to the perf-board. I did the step before my imu calibration so that the readings wouldn't change afterward. The system first checks if the knee is bent by at least 30° using the flex sensor. Once the bending threshold is reached, the IMU continuously measures the knee’s rotational speed. If the IMU detects a sudden rotation greater than the threshold, the movement is considered too fast or abrupt. Right now, I have that threshold set to 0.5 rad/sec by default, but the user can adjust the value based on their rehab stage. 
@@ -29,8 +27,6 @@ Figure 2: function of accelerometer and gyroscope (https://www.circuitbread.com/
 
 # Second Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
 <iframe width="932" height="524" src="https://www.youtube.com/embed/F-pjQPVt2HI?si=JOuxwe4WjZzyRa57" title="My 2nd Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 My second milestone consists of programming my bread board to read sensor data and activate the buzzer once the flex sensor is bent. The purpose of this is to detect when the knee is bending beyond a certain threshold and alert the user to maintain proper form during their exercises. 
@@ -40,8 +36,6 @@ My program currently reads sensor data, but it doesn't detect incorrect movement
 
 
 # First Milestone
-
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="932" height="524" src="https://www.youtube.com/embed/fE7zrK_g6vI" title="My 1st Milestone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
