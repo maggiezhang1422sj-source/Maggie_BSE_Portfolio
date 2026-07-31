@@ -20,7 +20,8 @@ My biggest challenge analyzing issues relating to my hardware components. After 
 
 
 <img src="image.jpg" alt="image" style="width: 100; height: auto;" src="https://github.com/user-attachments/assets/72220d5a-e1c6-4bda-a038-cd85c76940cd" />
-Figure 2: function of accelerometer and gyroscope (https://www.circuitbread.com/ee-faq/how-do-accelerometers-and-gyroscopes-work)
+Figure 2: function of accelerometer and gyroscope 
+(https://www.circuitbread.com/ee-faq/how-do-accelerometers-and-gyroscopes-work)
 
 
 
