@@ -58,6 +58,8 @@ Diagram does not include the imu because the website that allowed me to develop 
 
 # Code
 
+```cpp
+
 #include <Wire.h>
 #include <Adafruit_LSM6DS3TRC.h>
 #include <Adafruit_Sensor.h>
@@ -188,6 +190,7 @@ void loop() {
 
   delay(100);
 }
+```
 
 
 # Bill of Materials
